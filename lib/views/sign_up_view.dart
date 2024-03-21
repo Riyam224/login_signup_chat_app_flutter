@@ -87,8 +87,16 @@ class _SignUpViewState extends State<SignUpView> {
             // todo
             obscureText: _obscureText,
             controller: password,
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
                 labelText: 'password',
+                suffixIcon: IconButton(
+                    icon: Icon(
+                        _obscureText ? Icons.visibility : Icons.visibility_off),
+                    onPressed: () {
+                      setState(() {
+                        _obscureText = !_obscureText;
+                      });
+                    }),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(
                     Radius.circular(35),
